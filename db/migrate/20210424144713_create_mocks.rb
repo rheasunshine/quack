@@ -6,7 +6,7 @@ class CreateMocks < ActiveRecord::Migration[6.0]
       t.string :request_method
       t.string :content_type
       t.string :body_type
-      t.text :body_content
+      t.json :body_content
       t.boolean :active
       t.integer :position
       t.references :endpoint, null: false #, foreign_key: true

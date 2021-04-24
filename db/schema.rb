@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_04_24_144755) do
+ActiveRecord::Schema.define(version: 2021_04_24_182456) do
 
   create_table "endpoints", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci", force: :cascade do |t|
     t.string "name"
@@ -35,12 +35,13 @@ ActiveRecord::Schema.define(version: 2021_04_24_144755) do
     t.string "request_method"
     t.string "content_type"
     t.string "body_type"
-    t.text "body_content"
+    t.json "body_content"
     t.boolean "active"
     t.integer "position"
     t.bigint "endpoint_id", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.integer "status"
     t.index ["endpoint_id"], name: "index_mocks_on_endpoint_id"
   end
 

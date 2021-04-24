@@ -25,7 +25,7 @@
     <fieldset>
       <legend>Headers:</legend>
       <%= form.fields_for :headers do |headers_form| %>
-        <%= render "header_fields", form: headers_form %>
+        <%= render "header_fields", f: headers_form %>
       <% end %>
       <%= link_to_add_fields "Add Headers", form, :headers %>
     </fieldset>

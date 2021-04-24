@@ -17,7 +17,7 @@
 
 <p>
   <strong>Mocks:</strong>
-  <%= render 'mocks/sortable_mocks', mocks: @endpoint.mocks %>
+  <%= render 'mocks/sortable_mocks', mocks: @endpoint.mocks.order(:position) %>
 </p>
 
 <%= link_to 'Edit', edit_endpoint_path(@endpoint) %> |
