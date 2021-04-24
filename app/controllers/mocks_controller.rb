@@ -69,6 +69,6 @@ class MocksController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def mock_params
-      params.require(:mock).permit(:name, :description, :request_method, :content_type, :body_type, :body_content, :active, :position, :endpoint_id, headers_attributes: %i[name value])
+      params.require(:mock).permit(:name, :description, :request_method, :status, :content_type, :body_type, :body_content, :active, :position, :endpoint_id, headers_attributes: %i[name value])
     end
 end

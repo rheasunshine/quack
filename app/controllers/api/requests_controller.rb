@@ -18,9 +18,13 @@ class Api::RequestsController < ApplicationController
 
   def mock
     @mock ||= Mock.where(
-      endpoint: Endpoint.find_by(endpoint: URI.decode(path)),
+      endpoint: endpoint,
       request_method: method,
     ).order(:position).first
+  end
+
+  def endpoint
+    Endpoint.find_by(endpoint: path)
   end
 
   def response_headers
