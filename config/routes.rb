@@ -1,3 +1,8 @@
 Rails.application.routes.draw do
-  # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
+  resources :headers
+  resources :mocks do
+    patch :move
+  end
+
+  resources :endpoints
 end

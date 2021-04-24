@@ -19,14 +19,14 @@ default: &default
 
 development:
   <<: *default
-  database: interop_quack_development
+  database: quack_development
 
 # Warning: The database defined as "test" will be erased and
 # re-generated from your development database when you run "rake".
 # Do not set this db to the same as development or production.
 test:
   <<: *default
-  database: interop_quack_test
+  database: quack_test
 
 # As with config/credentials.yml, you never want to store sensitive information,
 # like your database password, in your source code. If your source code is
@@ -49,6 +49,6 @@ test:
 #
 production:
   <<: *default
-  database: interop_quack_production
-  username: interop_quack
-  password: <%= ENV['INTEROP_QUACK_DATABASE_PASSWORD'] %>
+  database: quack_production
+  username: quack
+  password: <%= ENV['QUACK_DATABASE_PASSWORD'] %>

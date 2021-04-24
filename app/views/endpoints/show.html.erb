@@ -1,0 +1,24 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @endpoint.name %>
+</p>
+
+<p>
+  <strong>Description:</strong>
+  <%= @endpoint.description %>
+</p>
+
+<p>
+  <strong>Endpoint:</strong>
+  <%= @endpoint.endpoint %>
+</p>
+
+<p>
+  <strong>Mocks:</strong>
+  <%= render 'mocks/sortable_mocks', mocks: @endpoint.mocks %>
+</p>
+
+<%= link_to 'Edit', edit_endpoint_path(@endpoint) %> |
+<%= link_to 'Back', endpoints_path %>

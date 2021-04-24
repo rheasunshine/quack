@@ -1,0 +1,19 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @header.name %>
+</p>
+
+<p>
+  <strong>Value:</strong>
+  <%= @header.value %>
+</p>
+
+<p>
+  <strong>Mock:</strong>
+  <%= @header.mock_id %>
+</p>
+
+<%= link_to 'Edit', edit_header_path(@header) %> |
+<%= link_to 'Back', headers_path %>

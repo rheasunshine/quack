@@ -1,0 +1,58 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @mock.name %>
+</p>
+
+<p>
+  <strong>Description:</strong>
+  <%= @mock.description %>
+</p>
+
+<p>
+  <strong>Headers:</strong>
+  <%= render 'show_header', headers: @mock.headers %>
+</p>
+
+<p>
+  <strong>Request method:</strong>
+  <%= @mock.request_method %>
+</p>
+
+<p>
+  <strong>Content type:</strong>
+  <%= @mock.content_type %>
+</p>
+
+<p>
+  <strong>Body type:</strong>
+  <%= @mock.body_type %>
+</p>
+
+<p>
+  <strong>Body content:</strong>
+  <%= @mock.body_content %>
+</p>
+
+<p>
+  <strong>Active:</strong>
+  <%= @mock.active %>
+</p>
+
+<p>
+  <strong>Position:</strong>
+  <%= @mock.position %>
+</p>
+
+<p>
+  <strong>Endpoint:</strong>
+  <%= @mock.endpoint_id %>
+</p>
+<p>
+  <strong>Endpoint:</strong>
+  <%= @mock.endpoint_id %>
+</p>
+
+<%= link_to 'Edit', edit_mock_path(@mock) %> |
+<%= link_to 'Back', mocks_path %>

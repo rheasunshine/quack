@@ -1,0 +1,72 @@
+<%= form_with(model: mock, local: true) do |form| %>
+  <% if mock.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(mock.errors.count, "error") %> prohibited this mock from being saved:</h2>
+
+      <ul>
+        <% mock.errors.full_messages.each do |message| %>
+          <li><%= message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :name %>
+    <%= form.text_field :name %>
+  </div>
+
+  <div class="field">
+    <%= form.label :description %>
+    <%= form.text_area :description %>
+  </div>
+
+  <div class="field">
+    <fieldset>
+      <legend>Headers:</legend>
+      <%= form.fields_for :headers do |headers_form| %>
+        <%= render "header_fields", form: headers_form %>
+      <% end %>
+      <%= link_to_add_fields "Add Headers", form, :headers %>
+    </fieldset>
+  </div>
+
+  <div class="field">
+    <%= form.label :request_method %>
+    <%= form.text_field :request_method %>
+  </div>
+
+  <div class="field">
+    <%= form.label :content_type %>
+    <%= form.text_field :content_type %>
+  </div>
+
+  <div class="field">
+    <%= form.label :body_type %>
+    <%= form.text_field :body_type %>
+  </div>
+
+  <div class="field">
+    <%= form.label :body_content %>
+    <%= form.text_area :body_content %>
+  </div>
+
+  <div class="field">
+    <%= form.label :active %>
+    <%= form.check_box :active %>
+  </div>
+
+  <div class="field">
+    <%= form.label :position %>
+    <%= form.number_field :position %>
+  </div>
+
+  <div class="field">
+    <%= form.label :endpoint_id %>
+    <%= form.text_field :endpoint_id %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>
