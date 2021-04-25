@@ -15,5 +15,10 @@
   <%= @partner.description %>
 </p>
 
+<p>
+  <strong>APIs:</strong>
+  <%= render 'external_apis/external_api_list', external_apis: @partner.external_apis %>
+</p>
+
 <%= link_to 'Edit', edit_partner_path(@partner) %> |
 <%= link_to 'Back', partners_path %>

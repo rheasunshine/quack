@@ -1,6 +1,11 @@
 <p id="notice"><%= notice %></p>
 
 <p>
+  <strong>API:</strong>
+  <%= "#{@endpoint.external_api.partner.name}: #{@endpoint.external_api.name}" %>
+</p>
+
+<p>
   <strong>Name:</strong>
   <%= @endpoint.name %>
 </p>

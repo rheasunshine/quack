@@ -2,29 +2,7 @@
 
 <h1>External Apis</h1>
 
-<table>
-  <thead>
-    <tr>
-      <th>Name</th>
-      <th>Description</th>
-      <th>Partner</th>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
-
-  <tbody>
-    <% @external_apis.each do |external_api| %>
-      <tr>
-        <td><%= external_api.name %></td>
-        <td><%= external_api.description %></td>
-        <td><%= external_api.partner_id %></td>
-        <td><%= link_to 'Show', external_api %></td>
-        <td><%= link_to 'Edit', edit_external_api_path(external_api) %></td>
-        <td><%= link_to 'Destroy', external_api, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
-    <% end %>
-  </tbody>
-</table>
+<%= render 'external_api_list', external_apis: @external_apis %>
 
 <br>
 

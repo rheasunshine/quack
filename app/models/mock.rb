@@ -9,6 +9,7 @@ class Mock < ApplicationRecord
 
   accepts_nested_attributes_for :headers, allow_destroy: true, reject_if: :all_blank
 
+  before_save :mark_active
   before_save :eval_body_content
 
   def eval_body_content
@@ -17,4 +18,13 @@ class Mock < ApplicationRecord
       self.body_content = eval(self.body_content)
     end
   end
+
+  # def check_active
+  #   active_mock.active = true unless active_mock.active
+  #   Mock.all.except(active_mock).each { |mock| mock.active = false }
+  # end
+  #
+  # def active_mock
+  #   self.endpoint.mocks.order(:position)&.first
+  # end
 end
