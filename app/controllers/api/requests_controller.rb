@@ -26,12 +26,18 @@ class Api::RequestsController < ApplicationController
   end
 
   def endpoint
-    Endpoint.find_by(endpoint: fullpath)
+    Endpoint.find_by(endpoint: fullpath) || match_endpoint_with_regex
   end
 
   def response_headers
     headers.each_with_object({}) do |header, headers|
       headers[header.name] = header.value
+    end
+  end
+
+  def match_endpoint_with_regex
+    Endpoint.dynamic.find do |endpoint|
+      ee =~ Regexp.new(endpoint.regex)
     end
   end
 end

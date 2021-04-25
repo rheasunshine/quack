@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_04_25_155228) do
+ActiveRecord::Schema.define(version: 2021_04_25_172956) do
 
   create_table "endpoints", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci", force: :cascade do |t|
     t.string "name"
@@ -19,6 +19,7 @@ ActiveRecord::Schema.define(version: 2021_04_25_155228) do
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.bigint "external_api_id"
+    t.string "regex"
     t.index ["external_api_id"], name: "index_endpoints_on_external_api_id"
   end
 

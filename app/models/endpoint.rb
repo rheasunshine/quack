@@ -3,4 +3,6 @@ class Endpoint < ApplicationRecord
 
   has_many :mocks
   belongs_to :external_api
+
+  scope :dynamic, -> { where.not(regex: nil) }
 end
