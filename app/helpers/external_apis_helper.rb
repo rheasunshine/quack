@@ -1,0 +1,2 @@
+module ExternalApisHelper
+end

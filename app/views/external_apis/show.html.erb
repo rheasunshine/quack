@@ -1,0 +1,19 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @external_api.name %>
+</p>
+
+<p>
+  <strong>Description:</strong>
+  <%= @external_api.description %>
+</p>
+
+<p>
+  <strong>Partner:</strong>
+  <%= @external_api.partner_id %>
+</p>
+
+<%= link_to 'Edit', edit_external_api_path(@external_api) %> |
+<%= link_to 'Back', external_apis_path %>

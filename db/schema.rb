@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_04_24_182456) do
+ActiveRecord::Schema.define(version: 2021_04_25_155228) do
 
   create_table "endpoints", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci", force: :cascade do |t|
     t.string "name"
@@ -18,6 +18,17 @@ ActiveRecord::Schema.define(version: 2021_04_24_182456) do
     t.string "endpoint"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.bigint "external_api_id"
+    t.index ["external_api_id"], name: "index_endpoints_on_external_api_id"
+  end
+
+  create_table "external_apis", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci", force: :cascade do |t|
+    t.string "name"
+    t.text "description"
+    t.bigint "partner_id", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["partner_id"], name: "index_external_apis_on_partner_id"
   end
 
   create_table "headers", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci", force: :cascade do |t|
@@ -33,6 +44,7 @@ ActiveRecord::Schema.define(version: 2021_04_24_182456) do
     t.string "name"
     t.text "description"
     t.string "request_method"
+    t.integer "status"
     t.string "content_type"
     t.string "body_type"
     t.json "body_content"
@@ -41,8 +53,15 @@ ActiveRecord::Schema.define(version: 2021_04_24_182456) do
     t.bigint "endpoint_id", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-    t.integer "status"
     t.index ["endpoint_id"], name: "index_mocks_on_endpoint_id"
+  end
+
+  create_table "partners", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci", force: :cascade do |t|
+    t.string "name"
+    t.string "identifier"
+    t.text "description"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
   end
 
 end

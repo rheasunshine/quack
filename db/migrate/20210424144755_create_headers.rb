@@ -3,7 +3,7 @@ class CreateHeaders < ActiveRecord::Migration[6.0]
     create_table :headers do |t|
       t.string :name
       t.text :value
-      t.references :mock, null: false #, foreign_key: true
+      t.references :mock, null: false, index: true
 
       t.timestamps
     end
