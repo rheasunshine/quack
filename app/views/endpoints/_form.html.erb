@@ -12,8 +12,8 @@
   <% end %>
 
   <div class="field">
-    <%= form.label :external_api %>
-    <%= form.text_field :external_api %>
+    <%= form.label :external_api_id %>
+    <%= form.select :external_api_id, options_from_collection_for_select(ExternalApi.all, :id, :name) %>
   </div>
 
   <div class="field">

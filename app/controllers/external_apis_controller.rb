@@ -21,6 +21,7 @@ class ExternalApisController < ApplicationController
 
   # POST /external_apis or /external_apis.json
   def create
+    binding.pry
     @external_api = ExternalApi.new(external_api_params)
 
     respond_to do |format|

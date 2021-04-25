@@ -1,10 +1,12 @@
 class Api::RequestsController < ApplicationController
   def serve_mock_response
     render build_mock_response
+  rescue => e
+    head :bad_request
   end
 
   private
-  delegate :method, :path, :raw_post, to: :request
+  delegate :method, :fullpath, :raw_post, to: :request
   delegate :headers, :body_content, :body_type, :content_type, :status, :request_method, to: :mock
 
   def build_mock_response
@@ -24,7 +26,7 @@ class Api::RequestsController < ApplicationController
   end
 
   def endpoint
-    Endpoint.find_by(endpoint: path)
+    Endpoint.find_by(endpoint: fullpath)
   end
 
   def response_headers
