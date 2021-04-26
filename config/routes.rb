@@ -1,6 +1,7 @@
 Rails.application.routes.draw do
-  resources :external_apis
+  root "partners#index"
   resources :partners
+  resources :external_apis
   # ***** #
   resources :endpoints
   resources :headers

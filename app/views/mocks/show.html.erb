@@ -1,6 +1,11 @@
 <p id="notice"><%= notice %></p>
 
 <p>
+  <strong>Endpoint:</strong>
+  <%= @mock.endpoint.endpoint %>
+</p>
+
+<p>
   <strong>Name:</strong>
   <%= @mock.name %>
 </p>
@@ -43,15 +48,6 @@
 <p>
   <strong>Position:</strong>
   <%= @mock.position %>
-</p>
-
-<p>
-  <strong>Endpoint:</strong>
-  <%= @mock.endpoint_id %>
-</p>
-<p>
-  <strong>Endpoint:</strong>
-  <%= @mock.endpoint_id %>
 </p>
 
 <%= link_to 'Edit', edit_mock_path(@mock) %> |

@@ -23,7 +23,7 @@
 
   <div class="field">
     <%= form.label :endpoint_id %>
-    <%= form.select :endpoint_id, options_from_collection_for_select(Endpoint.all, :id, :endpoint) %>
+    <%= form.collection_select :endpoint_id, Endpoint.all, :id, :endpoint %>
   </div>
 
   <div class="field">
