@@ -37,7 +37,7 @@ class Api::RequestsController < ApplicationController
 
   def match_endpoint_with_regex
     Endpoint.dynamic.find do |endpoint|
-      ee =~ Regexp.new(endpoint.regex)
+      fullpath =~ Regexp.new(endpoint.regex)
     end
   end
 end

@@ -1,7 +1,11 @@
 <p id="notice"><%= notice %></p>
+<p>
+  <strong>Partner:</strong>
+  <%= @external_api.partner.name %>
+</p>
 
 <p>
-  <strong>Name:</strong>
+  <strong>API:</strong>
   <%= @external_api.name %>
 </p>
 
@@ -10,9 +14,10 @@
   <%= @external_api.description %>
 </p>
 
+
 <p>
-  <strong>Partner:</strong>
-  <%= @external_api.partner_id %>
+  <strong>Endpoints:</strong>
+  <%= render 'endpoints/endpoint_list', endpoints: @external_api.endpoints %>
 </p>
 
 <%= link_to 'Edit', edit_external_api_path(@external_api) %> |
